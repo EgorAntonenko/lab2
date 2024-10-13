@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Calculator</title>
+</head>
+<body>
+    <h1>Web Calculator</h1>
+    
+    <form action="/calculate" method="post">
+        <label for="expression">Enter your expression:</label>
+        <input type="text" id="expression" name="expression" required>
+        <button type="submit">Calculate</button>
+    </form>
+    
+    <div>
+        <p th:if="${result != null}">Result: <span th:text="${result}"></span></p>
+        <p th:if="${error != null}" style="color: red;">Error: <span th:text="${error}"></span></p>
+    </div>
+</body>
+</html>
